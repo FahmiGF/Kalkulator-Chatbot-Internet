@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NEXA — Kalkulator, Chatbot 4 kategori, dan Mini Internet dalam satu aplikasi." />
+  <title>NEXA · Kalkulator + Chatbot + Mini Internet</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">N</div>
+        <div>
+          <h1>NEXA<span>.app</span></h1>
+          <p>Kalkulator · Chatbot 4 Kategori · Mini Internet</p>
+        </div>
+      </div>
+      <div class="status"><span class="dot"></span> Online</div>
+    </header>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab active" role="tab" data-tab="calculator" aria-selected="true">
+        <span>📐</span> Kalkulator
+      </button>
+      <button class="tab" role="tab" data-tab="chatbot" aria-selected="false">
+        <span>💬</span> Chatbot
+      </button>
+      <button class="tab" role="tab" data-tab="internet" aria-selected="false">
+        <span>🌐</span> Mini Internet
+      </button>
+    </nav>
+
+    <main>
+      <!-- ================= CALCULATOR ================= -->
+      <section class="panel active" id="panel-calculator" role="tabpanel">
+        <div class="calc-wrap">
+          <div class="calc-display">
+            <div class="calc-expression" id="calcExpression">0</div>
+            <div class="calc-result" id="calcResult">0</div>
+          </div>
+          <div class="calc-keys">
+            <button class="key fn" data-action="clear">AC</button>
+            <button class="key fn" data-action="backspace">⌫</button>
+            <button class="key fn" data-value="(">(</button>
+            <button class="key fn" data-value=")">)</button>
+
+            <button class="key fn" data-value="sqrt(">√</button>
+            <button class="key fn" data-value="^">x^y</button>
+            <button class="key fn" data-value="%">%</button>
+            <button class="key op" data-value="/">÷</button>
+
+            <button class="key" data-value="7">7</button>
+            <button class="key" data-value="8">8</button>
+            <button class="key" data-value="9">9</button>
+            <button class="key op" data-value="*">×</button>
+
+            <button class="key" data-value="4">4</button>
+            <button class="key" data-value="5">5</button>
+            <button class="key" data-value="6">6</button>
+            <button class="key op" data-value="-">−</button>
+
+            <button class="key" data-value="1">1</button>
+            <button class="key" data-value="2">2</button>
+            <button class="key" data-value="3">3</button>
+            <button class="key op" data-value="+">+</button>
+
+            <button class="key fn" data-value="pi">π</button>
+            <button class="key" data-value="0">0</button>
+            <button class="key" data-value=".">.</button>
+            <button class="key equals" data-action="equals">=</button>
+          </div>
+          <p class="calc-hint">Dukungan: <code>+ − × ÷ ^ % ( )</code> dan fungsi <code>sqrt, sin, cos, tan, log, ln, abs, round</code>.</p>
+        </div>
+      </section>
+
+      <!-- ================= CHATBOT ================= -->
+      <section class="panel" id="panel-chatbot" role="tabpanel">
+        <div class="chat-wrap">
+          <aside class="chat-categories">
+            <h2>Kategori</h2>
+            <button class="cat-chip active" data-cat="semua">🌟 Semua</button>
+            <button class="cat-chip" data-cat="matematika">📐 Matematika</button>
+            <button class="cat-chip" data-cat="sains">🔬 Sains</button>
+            <button class="cat-chip" data-cat="umum">💬 Umum</button>
+            <button class="cat-chip" data-cat="hiburan">🎲 Hiburan</button>
+            <div class="cat-tip">
+              <strong>Tips</strong>
+              <p>Klik kategori untuk menyaring jawaban, atau langsung ketik pertanyaan bebas.</p>
+            </div>
+          </aside>
+
+          <div class="chat-main">
+            <div class="chat-log" id="chatLog" aria-live="polite"></div>
+            <form class="chat-form" id="chatForm">
+              <input id="chatInput" type="text" autocomplete="off"
+                placeholder="Tanya apa saja… contoh: hitung 12*(3+4)" />
+              <button type="submit" class="send">Kirim ➤</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= MINI INTERNET ================= -->
+      <section class="panel" id="panel-internet" role="tabpanel">
+        <div class="browser">
+          <div class="browser-bar">
+            <div class="browser-nav">
+              <button id="btnBack" title="Kembali">←</button>
+              <button id="btnForward" title="Maju">→</button>
+              <button id="btnHome" title="Beranda">⌂</button>
+            </div>
+            <form class="browser-form" id="browserForm">
+              <span class="lock">🔒</span>
+              <input id="browserInput" type="text" placeholder="Cari atau ketik alamat, mis. wiki.nexa" />
+            </form>
+          </div>
+          <div class="browser-body" id="browserBody"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>NEXA · dibuat dengan JavaScript murni</span>
+      <span id="clock"></span>
+    </footer>
+  </div>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

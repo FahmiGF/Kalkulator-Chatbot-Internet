@@ -1,0 +1,13 @@
+{
+  "name": "kalkulator-chatbot-internet",
+  "version": "1.0.0",
+  "description": "Gabungan Kalkulator UI + Chatbot 4 kategori + Mini Internet",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "keywords": ["calculator", "chatbot", "mini-internet"],
+  "license": "MIT"
+}
